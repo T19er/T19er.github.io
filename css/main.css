@@ -1140,7 +1140,7 @@ pre .javascript .function {
   bottom: 30px;
 }
 .header {
-  background: url("../image/touxiang.jpg");
+  background: transparent;
 }
 .header-inner {
   position: relative;
@@ -1891,7 +1891,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff0fa2;
+  background: #ffaf78;
 }
 .links-of-blogroll {
   font-size: 13px;
