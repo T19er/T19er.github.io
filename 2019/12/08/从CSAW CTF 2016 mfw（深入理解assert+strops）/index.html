@@ -96,20 +96,27 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="T19er&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/前端/index.html">
+  <meta name="description" content="从一道ctf题(CSAW CTF 2016 mfw)深入理解assert+strops从git源码泄露入手，查看源码可知page没有做任何过滤 &amp;lt;?php  if (isset($_GET[&amp;apos;page&amp;apos;])) {     $page = $_GET[&amp;apos;page&amp;apos;]; } else {     $page = &amp;quot;home&amp;quot;; }  $">
+<meta name="keywords" content="PHP,ctf,writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从CSAW CTF 2016 mfw（深入理解assert+strops）">
+<meta property="og:url" content="http://yoursite.com/2019/12/08/从CSAW CTF 2016 mfw（深入理解assert+strops）/index.html">
 <meta property="og:site_name" content="T19er&#39;s Blog">
+<meta property="og:description" content="从一道ctf题(CSAW CTF 2016 mfw)深入理解assert+strops从git源码泄露入手，查看源码可知page没有做任何过滤 &amp;lt;?php  if (isset($_GET[&amp;apos;page&amp;apos;])) {     $page = $_GET[&amp;apos;page&amp;apos;]; } else {     $page = &amp;quot;home&amp;quot;; }  $">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190708164620217.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Fib3V0MjM=,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2020-01-12T02:52:50.513Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="T19er&#39;s Blog">
+<meta name="twitter:title" content="从CSAW CTF 2016 mfw（深入理解assert+strops）">
+<meta name="twitter:description" content="从一道ctf题(CSAW CTF 2016 mfw)深入理解assert+strops从git源码泄露入手，查看源码可知page没有做任何过滤 &amp;lt;?php  if (isset($_GET[&amp;apos;page&amp;apos;])) {     $page = $_GET[&amp;apos;page&amp;apos;]; } else {     $page = &amp;quot;home&amp;quot;; }  $">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190708164620217.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Fib3V0MjM=,size_16,color_FFFFFF,t_70">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/前端/">
+  <link rel="canonical" href="http://yoursite.com/2019/12/08/从CSAW CTF 2016 mfw（深入理解assert+strops）/">
 
 
 
@@ -119,7 +126,7 @@
   };
 </script>
 
-  <title>标签: 前端 | T19er's Blog</title>
+  <title>从CSAW CTF 2016 mfw（深入理解assert+strops） | T19er's Blog</title>
   
 
 
@@ -167,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -226,7 +233,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -302,79 +309,273 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>前端<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/08/从CSAW CTF 2016 mfw（深入理解assert+strops）/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="T19er">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/image/touxiang3.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="T19er's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/07/01/如何美化Hexo Next搭建在github的博客/" itemprop="url">
-            
-              <span itemprop="name">如何美化Hexo Next</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">从CSAW CTF 2016 mfw（深入理解assert+strops）
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-01T14:50:21+08:00" content="2019-07-01">
-          07-01
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-08 16:10:50" itemprop="dateCreated datePublished" datetime="2019-12-08T16:10:50+08:00">2019-12-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-01-12 10:52:50" itemprop="dateModified" datetime="2020-01-12T10:52:50+08:00">2020-01-12</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CTF记录/" itemprop="url" rel="index"><span itemprop="name">CTF记录</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>从一道ctf题(CSAW CTF 2016 mfw)深入理解assert+strops<br><img src="https://img-blog.csdnimg.cn/20190708164620217.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Fib3V0MjM=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>从git源码泄露入手，查看源码可知page没有做任何过滤</p>
+<pre><code>&lt;?php
+
+if (isset($_GET[&apos;page&apos;])) {
+    $page = $_GET[&apos;page&apos;];
+} else {
+    $page = &quot;home&quot;;
+}
+
+$file = &quot;templates/&quot; . $page . &quot;.php&quot;;
+
+// I heard &apos;..&apos; is dangerous!
+assert(&quot;strpos(&apos;$file&apos;, &apos;..&apos;) === false&quot;) or die(&quot;Detected hacking attempt!&quot;);
+
+// TODO: Make this look nice
+assert(&quot;file_exists(&apos;$file&apos;)&quot;) or die(&quot;That file doesn&apos;t exist!&quot;);
+
+?&gt;
+</code></pre><p>strops():<br>返回字符串在另一字符串中第一次出现的位置，如果没有找到字符串则返回 FALSE.<br>assert():</p>
+<pre><code>    assert ( mixed $assertion [, Throwable $exception ] ) : bool
+如果 assertion 是字符串，它将会被 assert() 当做 PHP 代码来执行。
+</code></pre><p> assertion 是字符串的优势是当禁用断言时它的开销会更小，并且在断言失败时消息会包含 assertion 表达式。 这意味着如果你传入了 boolean 的条件作为 assertion，这个条件将不会显示为断言函数的参数；在调用你定义的 assert_options() 处理函数时，条件会转换为字符串，而布尔值 FALSE 会被转换成空字符串。</p>
+<p>断言这个功能应该只被用来调试。 你应该用于完整性检查时测试条件是否始终应该为 TRUE，来指示某些程序错误，或者检查具体功能的存在（类似扩展函数或特定的系统限制和功能）。 </p>
+<pre><code>assert(&quot;strpos(&apos;$file&apos;, &apos;..&apos;) === false&quot;) or die(&quot;Detected hacking attempt!&quot;);
+</code></pre><p>   在网上看到某博主的payload：</p>
+<pre><code>flag&apos;,&apos;..&apos;)+or+system(&apos;cat+templates/flag.php&apos;);//
+</code></pre><p>assert语句里的strops括号内是单引号，将<code>&#39;,&#39;..&#39;</code>闭合，而后才能执行系统命令获取flag.php，最后将die语句注释。</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"><i class="fa fa-tag"></i> PHP</a>
+          
+            <a href="/tags/ctf/" rel="tag"><i class="fa fa-tag"></i> ctf</a>
+          
+            <a href="/tags/writeup/" rel="tag"><i class="fa fa-tag"></i> writeup</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/07/php反序列化漏洞学习笔记/" rel="next" title="php反序列化漏洞学习笔记">
+                <i class="fa fa-chevron-left"></i> php反序列化漏洞学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -692,6 +893,10 @@ setInterval("createtime()",250);
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
 
   
 
@@ -702,6 +907,8 @@ setInterval("createtime()",250);
   
   
 
+
+  
 
 
   
